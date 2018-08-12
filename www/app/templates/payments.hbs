@@ -1,0 +1,39 @@
+<div class="jumbotron">
+  <div class="container">
+    <p class="lead">tx费用由矿池支付.</p>
+    <strong>总支付次数:</strong> <span class="label label-info">{{model.paymentsTotal}}</span>
+  </div>
+</div>
+<div class="container">
+  {{#if model.payments}}
+  <h4>最近支付</h4>
+  <div class="table-responsive">
+    <table class="table table-condensed table-striped">
+      <thead>
+        <tr>
+          <th>时间</th>
+          <th>数量</th>
+          <th>地址</th>
+          <th>Tx ID</th>
+        </tr>
+      </thead>
+      <tbody>
+        {{#each model.payments as |tx|}}
+          <tr>
+            <td>{{format-date-locale tx.timestamp}}</td>
+            <td>{{format-number tx.formatAmount}}</td>
+            <td>
+              <a href="http://explorer.moac.io/addr/{{tx.address}}" class="hash" rel="nofollow" target="_blank">{{tx.address}}</a>
+            </td>
+            <td>
+              <a href="http://explorer.moac.io/tx/{{tx.tx}}" class="hash" rel="nofollow" target="_blank">{{format-tx tx.tx}}</a>
+            </td>
+          </tr>
+        {{/each}}
+      </tbody>
+    </table>
+  </div>
+  {{else}}
+  <h3>没有支付记录</h3>
+  {{/if}}
+</div>

@@ -1,0 +1,18 @@
+<div class="jumbotron">
+  <div class="container">
+  </div>
+</div>
+<div class="container">
+  <ul class="nav nav-tabs">
+    {{#active-li currentWhen='help.index' role='presentation'}}
+      {{#link-to 'help.index'}}Claymore (Stratum){{/link-to}}
+    {{/active-li}}
+    {{#active-li currentWhen='help.http' role='presentation'}}
+      {{#link-to 'help.http'}}Ethminer (http){{/link-to}}
+    {{/active-li}}
+    {{#active-li currentWhen='help.nice' role='presentation'}}
+      {{#link-to 'help.nice'}}Nicehash{{/link-to}}
+    {{/active-li}}
+  </ul>
+  {{outlet}}
+</div>

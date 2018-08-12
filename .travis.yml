@@ -1,0 +1,6 @@
+go:
+  - 1.9
+  - tip
+
+services:
+  - redis-server
