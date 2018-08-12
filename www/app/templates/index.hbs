@@ -3,105 +3,105 @@
     <div class="row">
       <div class="col-md-5">
         <h1 style="font-size: 24px">
-          <strong>兄弟 MOAC Mining Pool</strong>
+          <strong>Open Moac Pool</strong>
         </h1>
-        <strong>每2小时最小支付: {{config.PayoutThreshold}}</strong><br/>
-        <span class="label label-success">PROP</span> 稳定,快速,安全.QQ群:790490258<br/>
-        <span class="label label-success">PPLNS</span> 实时PPLNS支付方案.<br/>
-        <span class="label label-success">24/365</span> 24小时*365天 全程服务.<br/>
+        <strong>Min. payout threshold: {{config.PayoutThreshold}}</strong><br/>
+        <span class="label label-success">PROP</span> Stable and profitable pool with regular payouts.<br/>
+        <span class="label label-success">PPLNS</span> Real time PPLNS payout scheme.<br/>
+        <span class="label label-success">24/365</span> Unstoppable server infrastructure with 24/365 customer support.<br/>
       </div>
       <div class="col-md-3 stats">
-        <div><i class="fa fa-users"></i> 在线矿工: <span id="poolHashrate">{{format-number stats.model.minersTotal}}</span></div>
-        <div><i class="fa fa-tachometer"></i> 矿池算力: <span id="poolHashrate">{{format-hashrate stats.model.hashrate}}</span></div>
+        <div><i class="fa fa-users"></i> Miners Online: <span id="poolHashrate">{{format-number stats.model.minersTotal}}</span></div>
+        <div><i class="fa fa-tachometer"></i> Pool Hash Rate: <span id="poolHashrate">{{format-hashrate stats.model.hashrate}}</span></div>
         <div><i class="fa fa-money"></i> Pool Fee: <span id="poolFee" class="label label-success">{{config.PoolFee}}</span></div>
         {{#if stats.model.stats.lastBlockFound}}
-        <div><i class="fa fa-clock-o"></i> 最新撸到的块: <span>{{format-relative (seconds-to-ms stats.model.stats.lastBlockFound)}}</span></div>
+        <div><i class="fa fa-clock-o"></i> Last Block Found: <span>{{format-relative (seconds-to-ms stats.model.stats.lastBlockFound)}}</span></div>
         {{/if}}
       </div>
       <div class="col-md-4 stats">
-        <div><i class="fa fa-unlock-alt"></i> 全网难度: <span>{{with-metric-prefix stats.difficulty}}</span></div>
-        <div><i class="fa fa-tachometer"></i> 全网算力: <span>{{format-hashrate stats.hashrate}}</span></div>
-        <div><i class="fa fa-bars"></i> 全网高度: <span>{{format-number stats.height}}</span></div>
-        <div><i class="fa fa-clock-o"></i> 幸运度: <span>{{format-number stats.roundVariance style='percent'}}</span></div>
+        <div><i class="fa fa-unlock-alt"></i> Network Difficulty: <span>{{with-metric-prefix stats.difficulty}}</span></div>
+        <div><i class="fa fa-tachometer"></i> Network Hash Rate: <span>{{format-hashrate stats.hashrate}}</span></div>
+        <div><i class="fa fa-bars"></i> Blockchain Height: <span>{{format-number stats.height}}</span></div>
+        <div><i class="fa fa-clock-o"></i> Current Round Variance: <span>{{format-number stats.roundVariance style='percent'}}</span></div>
       </div>
     </div>
   </div>
 </div>
-
 <div class="container">
   <div>
   {{high-charts mode=chartMode chartOptions=chartOptions content=chartData}}
   </div>
   <div class="stats">
-    <h4>矿工状态 &amp; 支付记录</h4>
+    <h4>Your Stats &amp; Payment History</h4>
     <div class="input-group">
-      {{input value=cachedLogin class="form-control" placeholder="输入你MOAC钱包地址"}}
+      {{input value=cachedLogin class="form-control" placeholder="Enter Your MOAC Address"}}
       <span class="input-group-btn">
         <button class="btn btn-primary" type="button" {{action 'lookup' cachedLogin}}>
-          <span style="display: inline;"><i class="fa fa-search"></i> 查看</span>
+          <span style="display: inline;"><i class="fa fa-search"></i> Lookup</span>
         </button>
       </span>
     </div>
   </div>
   <div>
     <table border="0" width="100%">
-      <h4>连接信息</h4>
+      <h4>Connection info</h4>
       <tr>
         <td>
           <h5 class="note note-info text-center">
-            <span class="label label-success">低算力</span>&nbsp;<a href="./#/help" title="CLICK FOR HELP"><b>单机算力 &lt; 150 MH/s</b></a>
+            <span class="label label-success">2b</span>&nbsp;<a href="./#/help" title="CLICK FOR HELP"><b>RIG HASHRATE &lt; 150 MH/s</b></a>
             <br>
             (difficulty 2 billion)
             <br><br>
             <b>Stratum Mining:</b>
             <br><br>
-            <code>stratum+tcp://{{config.StratumHost}}:5005</code>
+            <code>stratum+tcp://{{config.StratumHost}}:8008</code>
             <hr>
             <b>Getwork Mining:</b>
             <br><br>
-            <code>{{config.HttpHost}}:5555</code>
+            <code>{{config.HttpHost}}:8888</code>
           </h5>
         </td>
         <td>
           <h5 class="note note-info text-center">
-            <span class="label label-success">中算力</span>&nbsp;<a href="./#/help" title="CLICK FOR HELP"><b>单机算力 / NICEHASH 150 - 800 MH/s</b></a>
+            <span class="label label-success">4b</span>&nbsp;<a href="./#/help" title="CLICK FOR HELP"><b>WORKER / NICEHASH 150 - 800 MH/s</b></a>
             <br>
             (difficulty 4 billion)
             <br><br>
             <b>Stratum Mining:</b>
             <br><br>
-            <code>stratum+tcp://{{config.StratumHost}}:5006</code>
+            <code>stratum+tcp://{{config.StratumHost}}:8009</code>
             <hr>
             <b>Getwork Mining:</b>
             <br><br>
-            <code>{{config.HttpHost}}:5556</code>
+            <code>{{config.HttpHost}}:8899</code>
           </h5>
         </td>
         <td>
           <h5 class="note note-info text-center">
-            <span class="label label-success">高算力</span>&nbsp;<a href="./#/help" title="CLICK FOR HELP"><b>单机算力 / NICEHASH &gt; 800 MH/s</b></a>
+            <span class="label label-success">9b</span>&nbsp;<a href="./#/help" title="CLICK FOR HELP"><b>WORKER / NICEHASH &gt; 800 MH/s</b></a>
             <br>
             (difficulty 9 billion)
             <br><br>
             <b>Stratum Mining:</b>
             <br><br>
-            <code>stratum+tcp://{{config.StratumHost}}:5007</code>
+            <code>stratum+tcp://{{config.StratumHost}}:9009</code>
             <hr>
             <b>Getwork Mining:</b>
             <br><br>
-            <code>{{config.HttpHost}}:5557</code>
+            <code>{{config.HttpHost}}:9999</code>
           </h5>
         </td>
       </tr>
     </table>
-    
+
     <h4 class="note note-info text-center">
       <b>Support:</b>
       <br><br>
-      Mail:&nbsp;&nbsp;<a href="mailto:pool@dapool.co">pool@dapool.co</a>
+      Mail:&nbsp;&nbsp;<a href="mailto:chainkorea@naver.com">chainkorea@naver.com</a>
       <br>
-      
+      Discord:&nbsp;&nbsp;join <a href="https://discord.gg/h6vsEuw" target="_new">Join the Discord Chatroom!</a>
+      <br>
+      <font size="-1">(direct Message to the Pool Operator: @Airking)</font>
     </h4>
-	
   </div>
 </div>

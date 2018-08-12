@@ -1,8 +1,8 @@
 {
   "name": "my-moac-pool",
   "version": "0.0.0",
-  "description": "my Moac Pool",
-  "private": true,
+  "description": "My Moac Pool",
+"private": true,
   "directories": {
     "doc": "doc",
     "test": "tests"

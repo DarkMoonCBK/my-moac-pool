@@ -2,30 +2,29 @@
    <div id="ember568" role="tabpanel" class="ember-view tab-pane active fade in">
       <div class="paper border-top-0">
          <br />
-         <p>获取MOAC钱包地址 <a href="https://www.moacwalletonline.com/" target="_blank">https://www.moacwalletonline.com/</a></p>
-         <p>下载 <a href="https://bitcointalk.org/index.php?topic=1433925.0" target="blank">Claymore Dual Miner</a> 对应你的操作系统</p>
+         <p>Obtain CLO wallet address at <a href="https://ethereumproject.github.io/etherwallet/" target="_blank">https://ethereumproject.github.io/etherwallet/</a></p>
+         <p>Download <a href="https://github.com/nanopool/Claymore-Dual-Miner/releases" target="blank">Claymore Dual Miner</a> for you operation system</p>
          <h4><img src="windows.svg" height="20"> Windows</h4>
-         <p>建立 <code>miner.bat</code> 参考以下内容.</p>
+         <p>Create <code>miner.bat</code> file with following content and run it.</p>
          <pre><code>
 setx GPU_FORCE_64BIT_PTR 0
 setx GPU_MAX_HEAP_SIZE 100
 setx GPU_USE_SYNC_OBJECTS 1
 setx GPU_MAX_ALLOC_PERCENT 100
 setx GPU_SINGLE_ALLOC_PERCENT 100
-<kbd>&lt;path to miner&gt;</kbd>/ethdcrminer64.exe -epool dapool.me:<kbd>&lt;port&gt;</kbd> -ewal <kbd>&lt;wallet&gt;</kbd> -eworker <kbd>&lt;worker&gt;</kbd> -epsw x -mode 1 -allpools 1
+<kbd>&lt;path to miner&gt;</kbd>/ethdcrminer64.exe -epool clopool.net:8008 -ewal <kbd>&lt;wallet&gt;</kbd> -eworker <kbd>&lt;worker&gt;</kbd> -epsw x -mode 1
          </code></pre>
          <p>
-			<code>&lt;port&gt;</code> 对应你难度的端口
-            <code>&lt;wallet&gt;</code> 你的MOAC钱包地址,例如:
+            <code>&lt;wallet&gt;</code> is your CLO wallet address, example:
             <code>0xd34699FD152fe38CAacD3C096F6abb1cd79e88b2</code>.
             <br>
-            <code>&lt;worker&gt;</code> 你的矿机名,例如 : <code>rig01</code>, <code>rig02</code>
+            <code>&lt;worker&gt;</code> is custom name for worker, example : <code>rig01</code>, <code>rig02</code>
          </p>
       </div>
       <br />
       <div class="paper border-top-0">
          <h4><img src="linux.svg" height="20"> Linux</h4>
-         <p>建立 <code>miner.sh</code> 参考以下内容:</p>
+         <p>Create <code>miner.sh</code> file with following content:</p>
          <pre><code>
 #!/bin/bash
 export GPU_FORCE_64BIT_PTR=0
@@ -33,15 +32,14 @@ export GPU_MAX_HEAP_SIZE=100
 export GPU_USE_SYNC_OBJECTS=1
 export GPU_MAX_ALLOC_PERCENT=100
 export GPU_SINGLE_ALLOC_PERCENT=100
-<kbd>&lt;path to miner&gt;</kbd>/ethdcrminer64 -epool dapool.me:<kbd>&lt;port&gt;</kbd> -ewal <kbd>&lt;wallet&gt;</kbd> -eworker <kbd>&lt;worker&gt;</kbd> -epsw x -mode 1
+<kbd>&lt;path to miner&gt;</kbd>/ethdcrminer64 -epool clopool.net:8008 -ewal <kbd>&lt;wallet&gt;</kbd> -eworker <kbd>&lt;worker&gt;</kbd> -epsw x -mode 1
          </code></pre>
-         <p>赋予执行权限: <code>chmod +x &lt;path to miner.sh file&gt;</code> 然后运行</p>
+         <p>Make it executable: <code>chmod +x &lt;path to miner.sh file&gt;</code> and run it</p>
          <p>
-            <code>&lt;port&gt;</code> 对应你难度的端口
-            <code>&lt;wallet&gt;</code> 你的MOAC钱包地址,例如:
+            <code>&lt;wallet&gt;</code> is your CLO wallet address, example:
             <code>0xd34699FD152fe38CAacD3C096F6abb1cd79e88b2</code>.
             <br>
-            <code>&lt;worker&gt;</code> 你的矿机名,例如 : <code>rig01</code>, <code>rig02</code>
+            <code>&lt;worker&gt;</code> is custom name for worker, example : <code>rig01</code>, <code>rig02</code>
          </p>
       </div>
    </div>

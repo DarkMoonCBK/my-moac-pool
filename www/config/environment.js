@@ -2,7 +2,7 @@
 
 module.exports = function(environment) {
   var ENV = {
-    modulePrefix: 'open-moac-pool',
+    modulePrefix: 'my-moac-pool',
     environment: environment,
     rootURL: '/',
     locationType: 'hash',
@@ -15,7 +15,7 @@ module.exports = function(environment) {
 
     APP: {
       // API host and port
-      ApiUrl: 'https://moac.dapool.me/',
+      ApiUrl: 'https://moac.dapool.me',
 
       // HTTP mining endpoint
       HttpHost: 'http://dapool.me',
@@ -27,7 +27,7 @@ module.exports = function(environment) {
 
       // Fee and payout details
       PoolFee: '1%',
-      PayoutThreshold: '0.5 Moac',
+      PayoutThreshold: '0.5 MOAC',
 
       // For network hashrate (change for your favourite fork)
       BlockTime: 10
