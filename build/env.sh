@@ -11,10 +11,10 @@ fi
 workspace="$PWD/build/_workspace"
 root="$PWD"
 mcdir="$workspace/src/github.com/DarkMoonCBK"
-if [ ! -L "$mcdir/open-moac-pool" ]; then
+if [ ! -L "$mcdir/my-moac-pool" ]; then
     mkdir -p "$mcdir"
     cd "$mcdir"
-    ln -s ../../../../../. open-moac-pool
+    ln -s ../../../../../. my-moac-pool
     cd "$root"
 fi
 
@@ -25,8 +25,8 @@ GOBIN="$PWD/build/bin"
 export GOPATH GOBIN
 
 # Run the command inside the workspace.
-cd "$mcdir/open-moac-pool"
-PWD="$mcdir/open-moac-pool"
+cd "$mcdir/my-moac-pool"
+PWD="$mcdir/my-moac-pool"
 
 # Launch the arguments with the configured environment.
 exec "$@"
