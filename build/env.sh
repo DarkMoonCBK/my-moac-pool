@@ -25,8 +25,8 @@ GOBIN="$PWD/build/bin"
 export GOPATH GOBIN
 
 # Run the command inside the workspace.
-cd "$mcdir/my-moac-pool"
-PWD="$mcdir/my-moac-pool"
+cd "$mcdir/open-moac-pool"
+PWD="$mcdir/open-moac-pool"
 
 # Launch the arguments with the configured environment.
 exec "$@"
