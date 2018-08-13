@@ -5,8 +5,8 @@ import (
 	"os"
 	"testing"
 
-	"github.com/DarkMoonCBK/my-moac-pool/rpc"
-	"github.com/DarkMoonCBK/my-moac-pool/storage"
+	"github.com/DarkMoonCBK/my-pool/rpc"
+	"github.com/DarkMoonCBK/my-pool/storage"
 )
 
 func TestMain(m *testing.M) {
